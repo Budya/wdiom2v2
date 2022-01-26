@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/62343768/how-to-continue-running-scripts-defined-in-package-json-in-case-one-fails
