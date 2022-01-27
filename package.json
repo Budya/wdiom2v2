@@ -16,6 +16,5 @@
         "report": "allure generate allure-results/ && allure open",
         "testWin": "npm test & npm run report",
         "testLinux": "npm test; npm run report"
-        
     }
 }

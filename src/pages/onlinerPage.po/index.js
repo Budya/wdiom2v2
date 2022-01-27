@@ -9,8 +9,6 @@ class OnlinerPage extends BaseForm {
     async clickBaraholkaBtn() {
         return elements.baraholkaBtn.click();
     }
-
-  
 }
 
 module.exports = new OnlinerPage();

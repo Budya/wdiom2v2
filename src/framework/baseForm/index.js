@@ -16,5 +16,4 @@ module.exports = class BaseForm {
         await this.element.waitForExist();
         return this.isFormOpened();
     }
-
 };

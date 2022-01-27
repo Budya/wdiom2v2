@@ -9,8 +9,6 @@ class BaraholkaPage extends BaseForm {
     async smartWatchButtonClick() {
         return elements.smartWatchBtn.click(); 
     }
-
-    
 }
 
 module.exports = new BaraholkaPage();

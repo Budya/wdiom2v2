@@ -1,4 +1,6 @@
 const Logger = require('../utils/logger');
+const { ENVIRONMENT } = require('../../../src/environment/envConfig');
+const env = require(`../../../src/environment/${ENVIRONMENT}Environment`);
 
 module.exports = class Element {
     constructor(locator, name) {
@@ -39,4 +41,34 @@ module.exports = class Element {
         Logger.info(`Get attribute value from ${this.name}`);
         return (await $(this.locator)).getAttribute(attribute);
     }
+
+    async waitUntilWisible() {
+        await $(this.locator).waitUntil(async function() {
+            return this.isDisplayed();
+        }, {timeout: env.untilTimeout});
+    }
+
+    getLocator() {
+        return this.locator;
+    }
+
+    async switchToFrame() {
+        const elem = await (await $(this.locator));
+        return browser.switchToFrame(elem);
+    }
+
+    async waitElements() {
+        await browser.waitUntil(
+            async () => {
+                const elements = await ( await $$(this.locator));
+                return elements.length > 0; 
+            }, { timeout: env.untilTimeout }
+        );
+    }
+
+    async getElementsCount() {
+        Logger.info(`Get count of elements "${this.name}"`);        
+        const elements = await (await $$(this.locator));
+        return elements.length;
+    }    
 };
