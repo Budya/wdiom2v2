@@ -5,7 +5,7 @@ const securePage = require('../../src/pages/securePage.po');
 
 describe('My Login application', () => {    
     
-    it('should login with valid credentials', async () => {
+    it.skip('should login with valid credentials', async () => {
         allureReporter.addDescription('User logs in to application with valid credentials');
         allureReporter.addTestId('001');
         expect(await loginPage.isFormOpened()).withContext('Login page is not opened').toBeTrue();

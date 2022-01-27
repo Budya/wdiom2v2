@@ -33,4 +33,10 @@ module.exports = class Element {
         Logger.info(`Get text from ${this.name}`);
         return (await $(this.locator)).getText();
     }
+
+    async getAttribute(attribute) {
+        await this.waitForExist();
+        Logger.info(`Get attribute value from ${this.name}`);
+        return (await $(this.locator)).getAttribute(attribute);
+    }
 };

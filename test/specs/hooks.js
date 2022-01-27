@@ -5,6 +5,7 @@ const setup = require('../../src/framework/browserActions');
 
 beforeEach(async() => {
     await setup();
+    await browser.maximizeWindow();
     await browser.url(env.startURL);
 });
 
