@@ -14,7 +14,8 @@
     "scripts": {
         "test": "npx wdio run configs/wdio.conf.js",
         "report": "allure generate allure-results/ && allure open",
-        "testRes": "npm test & npm run report"
+        "testWin": "npm test & npm run report", 
+        "testLinux": "npm test: npm run report"
         
     }
 }
