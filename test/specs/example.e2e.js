@@ -15,7 +15,7 @@ describe('My Login application', () => {
         allureReporter.addStep('Assert that Secure page is open');
         expect(await securePage.isFormOpened()).toBeTrue();
         expect(await securePage.getTextFromMessage())
-            .toContain('You logged into a secure area!!');
+            .toContain('You logged into a secure area!');
         
     });
 });
